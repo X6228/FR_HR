@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style >
+            .detail {
+                width: 640px;
+                height: 902px;
+                position: absolute;
+                left: 50px;   
+                border-collapse: collapse;         
+            }
+            .detail,tr,td,th{
+                border: 1px solid black;
+
+            }
+            .error{
+                color: red;
+            }
+            #show{
+                box-shadow: 10px 10px 10px gray;
+                width: 800px;
+                height: 1000px;
+            }
+        </style>
+    </head>
+    <body>
+        {% if errors %}
+        <ul class="error">
+            {% for error in errors %}
+            <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div>
+            <form action="" method="GET"><label for="txt_id">身份证号：</label><input type="text" name="sfid" id="txt_id">&nbsp;<input type="submit" value="查询" style="color:red;"></form>
+        </div>
+        
+        {% if person %}
+        <div id="show">
+         <!-- {% load static %} -->
+        <table class="detail" cellspacing='0'>
+            <caption><h1>芙蓉区人员信息表</h1></caption>
+            <tr height="5%"><th width="12%" >姓名</th><td width="13%">{{person.Name}}</td><th width="12%">性别</th><td width="13%">{{person.Gender}}</td><th width="12%">出生年月</th><td width="13%">{{person.Birthday|date:"Y.m"}}</td><td rowspan="5" style="background-color:brown;" ><img src={{photoFile}}  width="100%" height="auto"></td></tr> <!--{{photoFile}}-->
+            <tr height="5%"><th>参加工作时间</th><td>{{person.WorkTime|date:"Y.m"}}</td><th>民族</th><td>{{person.Gender}}</td><th>政治面貌</th><td>{{person.Politial_Stauts}}</td></tr>
+            <tr height="5%"><th>婚姻状况</th><td>{{person.Marital_Stauts}}</td><th>籍贯</th><td>{{person.Native_Place}}</td><th>个人身份</th><td>{{person.Personal_Stauts}}</td></tr>
+            <tr height="5%"><th>身份证号</th><td colspan="3">{{person.Id_Number}}</td><th>专业技术职务</th><td></td></tr>
+            <tr height="5%"><th>单位及电话</th><td colspan="5"></td></tr>
+            <tr height="5%"><th rowspan="4">学历</th><th rowspan="2">全日制教育</th><th>学历学位</th><td colspan="2"></td><th>所学专业</th><td></td></tr>
+            <tr height="5%"><th>毕业院校</th><td colspan="2"></td><th>毕业时间</th><td></td></tr>
+            <tr height="5%"><th rowspan="2">在职教育</th><th>学历学位</th><td colspan="2"></td><th>所学专业</th><td></td></tr>
+            <tr height="5%"><th>毕业院校</th><td colspan="2"></td><th>毕业时间</th><td></td></tr>
+            <tr height="20%"><th>个人简历（含学习经历）</th><td colspan="6"></td></tr>
+            <tr height="10%"><th>受过何种奖励或处分</th><td colspan="6"></td></tr>
+            <tr height="15%"><th>家庭成员及主要社会关系</th><td colspan="6"></td></tr>
+            <tr><th>备注</th><td colspan="6"></td></tr>
+        </table>
+        </div>
+        {% endif %}
+        
+    </body>
+</html>
