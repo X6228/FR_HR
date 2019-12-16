@@ -42,7 +42,7 @@
          <!-- {% load static %} -->
         <table class="detail" cellspacing='0'>
             <caption><h1>芙蓉区人员信息表</h1></caption>
-            <tr height="5%"><th width="12%" >姓名</th><td width="13%">{{person.Name}}</td><th width="12%">性别</th><td width="13%">{{person.Gender}}</td><th width="12%">出生年月</th><td width="13%">{{person.Birthday|date:"Y.m"}}</td><td rowspan="5" style="background-color:brown;" ><img src={{photoFile}}  width="100%" height="auto"></td></tr> <!--{{photoFile}}-->
+            <tr height="5%"><th width="12%" >姓名</th><td width="13%">{{person.Name}}</td><th width="12%">性别</th><td width="13%">{{person.Gender}}</td><th width="12%">出生年月</th><td width="13%">{{person.Birthday|date:"Y.m"}}</td><td rowspan="5"  ><img src={{photoFile}}  width="100%" height="auto"></td></tr> <!--{{photoFile}}-->
             <tr height="5%"><th>参加工作时间</th><td>{{person.WorkTime|date:"Y.m"}}</td><th>民族</th><td>{{person.Gender}}</td><th>政治面貌</th><td>{{person.Politial_Stauts}}</td></tr>
             <tr height="5%"><th>婚姻状况</th><td>{{person.Marital_Stauts}}</td><th>籍贯</th><td>{{person.Native_Place}}</td><th>个人身份</th><td>{{person.Personal_Stauts}}</td></tr>
             <tr height="5%"><th>身份证号</th><td colspan="3">{{person.Id_Number}}</td><th>专业技术职务</th><td></td></tr>

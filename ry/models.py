@@ -5,6 +5,7 @@ class Person(models.Model):
     Id_Number = models.CharField(max_length=30,verbose_name="身份证号")           #身份证号
     Name = models.CharField(max_length=20,verbose_name="姓名")                    #姓名
     Gender = models.CharField(max_length=4,verbose_name="性别",blank=True)                   #性别
+    Nation = models.CharField(max_length=4,verbose_name="民族",blank=True)                  #民族
     Birthday = models.DateField(verbose_name="出生年月",blank=True,null=True)                           #出生年月
     WorkTime = models.DateField(verbose_name="参加工作时间",blank=True,null=True)                       #参加工作时间
     Marital_Stauts = models.CharField(max_length=8,verbose_name="婚姻状况",blank=True)     #婚姻状况
@@ -14,6 +15,7 @@ class Person(models.Model):
     Phone_Number = models.CharField(max_length=20,blank=True,verbose_name="电话号码")      #电话号码
     Work_Unit = models.CharField(max_length=100,blank=True,verbose_name="所在单位")        #所在单位
     Work_Stauts = models.CharField(max_length=8,blank=True,verbose_name="在岗状态")        #在岗状态
+    Photo = models.ImageField(upload_to='photo',verbose_name='近照',default="/static/photo/nophoto.jpg")                        #照片 
     Freely1 = models.CharField(max_length=8,blank=True)            #备用字段1
     Freely2 = models.CharField(max_length=8,blank=True)            #备用字段2
     Freely3 = models.CharField(max_length=8,blank=True)            #备用字段3
