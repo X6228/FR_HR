@@ -6,5 +6,5 @@ urlpatterns = [
     path('test/',views.template),
     path('detail',views.detail),
     path('list',views.list),
-
+    path('persons',views.PersonList.as_view()),
 ]

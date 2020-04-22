@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import request
 from ry import models
+from django.views.generic import ListView
 import os
 
 # Create your views here.
@@ -40,5 +41,7 @@ def list(request):
     persons = models.Person.objects.all()
     return render(request,'list.html',{'persons':persons})
 
+class PersonList(ListView):
+    model = models.Person
 
     
