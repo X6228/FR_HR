@@ -26,7 +26,7 @@ def detail(request):
                     photoFile = r"/static/photo/"+file
                     break 
              
-            return render(request,'detail.html',{'person':person,'photoFile':photoFile})
+            return render(request,'ry/detail.html',{'person':person,'photoFile':photoFile})
         except models.Person.DoesNotExist:
             if len(number) == 0:
                 errors.append('请输入身份证号！')
@@ -35,11 +35,11 @@ def detail(request):
             else:
                 errors.append('没有此人信息！')
                       
-    return render(request,'detail.html',{'errors':errors})
+    return render(request,'ry/detail.html',{'errors':errors})
 
 def list(request):
     persons = models.Person.objects.all()
-    return render(request,'list.html',{'persons':persons})
+    return render(request,'ry/list.html',{'persons':persons})
 
 class PersonList(ListView):
     model = models.Person

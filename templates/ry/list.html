@@ -1,0 +1,8 @@
+{%extends "frame.html"%}
+{%load static%}
+{%block title%}list{%endblock%}
+{%block content%}
+{% for person in persons %}
+    <div><span>{{person.Name}}</span><span>{{person.Id_Number}}</span><span>{{person.Gender}}</span></div>
+{% endfor %}
+{%endblock%}
