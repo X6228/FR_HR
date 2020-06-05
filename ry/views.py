@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import request
 from ry import models
-from django.views.generic import ListView
+from django.views.generic import ListView,CreateView
+from ry.forms import AddPersonForm_S
 import os
 
 # Create your views here.
@@ -43,5 +44,10 @@ def list(request):
 
 class PersonList(ListView):
     model = models.Person
+
+class addPerson_s(CreateView):
+    form_class = AddPersonForm_S
+    template_name = "ry/add_person.html"
+    success_url = ""
 
     
